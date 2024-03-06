@@ -75,12 +75,12 @@ public class EnemyController : MonoBehaviour
         Health--;
         if (Health != 0)
         {
-            bloodParticle.Play();
             anim.Play("Zombie Hit");
         }
         else
         {
             anim.Play("Zombie Die");
+            Destroy(transform.GetComponent<BoxCollider>());
         }
     }
 

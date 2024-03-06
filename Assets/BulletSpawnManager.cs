@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class BulletSpawnerManager : MonoBehaviour
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * addedForce) ;
         Destroy (bullet, destroyAfter);
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Shoot();
+        }
+    }
 }
 
